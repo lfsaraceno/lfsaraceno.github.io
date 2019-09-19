@@ -1,0 +1,58 @@
+.header-action {
+  flex: 2;
+}
+
+.header-store .search {
+  background: transparent;
+  outline: none;
+  border-style: none;
+  border-bottom: 1px solid #ffffff;
+  color: inherit;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: normal;
+  cursor: pointer;
+  max-width: 220px;
+}
+.header-store .search::placeholder {
+  color: inherit;
+  text-indent: inherit;
+}
+.header-action .icon {
+  display: none;
+}
+
+@media (max-width: 1150px) {
+  .header-action {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 5px;
+    background-color: #fff;
+    color: #252c41;
+    transform: translateX(-84%);
+    transition: transform 300ms linear;
+  }
+  .header-action.active {
+    transform: translateX(0);
+  }
+  .header-action .icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    background-size: 24px;
+    background-image: url(/img/search.svg);
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .header-action .icon.-close {
+    background-image: url(/img/close.svg);
+  }
+}

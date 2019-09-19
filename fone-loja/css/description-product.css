@@ -1,0 +1,122 @@
+.content-store {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box-headphone {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  border-radius: 0 150px 150px 0;
+  background-color: #ffffff;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.box-headphone::before {
+  content: "";
+  width: 600px;
+  height: 600px;
+  background-color: #fff;
+  position: absolute;
+  left: calc(-15% - 9px);
+  z-index: -1;
+}
+.img-phone {
+  width: 550px;
+  height: 550px;
+}
+
+.box-description {
+  flex: 0 1 auto;
+  padding-left: 60px;
+  box-sizing: border-box;
+}
+.box-description .heart {
+  position: relative;
+  top: 4rem;
+  right: 3rem;
+}
+.box-description .heart.-active {
+  background-image: url(./img/heart-active.png);
+}
+.box-description .heart:hover,
+.box-description .heart.-active:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.box-description .title {
+  font-size: 25px;
+  padding: 20px 0 55px 0;
+}
+.box-description .star-container {
+  display: flex;
+  width: 175px;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+.-star-active {
+  background-image: url(./img/star-full.png);
+}
+.box-description .star-rating:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.box-description .item {
+  padding: 0 0 30px;
+}
+
+.box-description .item.-info {
+  width: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-description .contrast {
+  text-transform: uppercase;
+}
+.box-description .text {
+  max-width: 550px;
+  padding-bottom: 60px;
+  line-height: 30px;
+}
+
+.more {
+  text-decoration: none;
+  color: #ffffff;
+  margin-bottom: 110px;
+}
+
+@media (max-width: 1210px) {
+  .box-headphone {
+    flex: 0 1 100%;
+    border-radius: 0;
+  }
+  .box-headphone {
+    display: flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .box-headphone::before {
+    display: none;
+  }
+  .box-description {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+  }
+  .box-description .heart,
+  .box-description .heart.-active {
+    float: right;
+    right: 1rem;
+  }
+  .item.-score {
+    position: relative;
+    bottom: 2rem;
+  }
+}

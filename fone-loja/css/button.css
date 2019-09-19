@@ -1,0 +1,51 @@
+.button {
+  width: 200px;
+  height: 60px;
+  margin-left: 40px;
+  line-height: 60px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 20px;
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 300ms linear, color 300ms linear,
+    transform 200ms linear;
+  margin-top: 70px;
+}
+.button:active {
+  transform: scale(0.95);
+}
+
+.button.-cart {
+  width: 220px;
+  font-weight: 300;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  margin-left: -20px;
+}
+.button.-cart:hover,
+.button.-cart:focus {
+  background-color: #fff;
+  color: #e24647;
+}
+
+.button.-buy {
+  display: inline-block;
+  font-weight: 500px;
+  background-color: #252c41;
+}
+.button.-buy:hover,
+.button.-buy:focus {
+  background-color: #fff;
+  color: #e24647;
+}
+
+@media (max-width: 1210px) {
+  .button,
+  .button.-cart {
+    margin: 20px 16px;
+    padding: 0;
+    width: 90%;
+  }
+}
