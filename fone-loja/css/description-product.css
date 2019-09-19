@@ -39,7 +39,7 @@
   right: 3rem;
 }
 .box-description .heart.-active {
-  background-image: url(./img/heart-active.png);
+  background-image: url(/fone-loja/img/heart-active.png);
 }
 .box-description .heart:hover,
 .box-description .heart.-active:hover {
@@ -57,7 +57,7 @@
   padding-bottom: 15px;
 }
 .-star-active {
-  background-image: url(./img/star-full.png);
+  background-image: url(/fone-loja/img/star-full.png);
 }
 .box-description .star-rating:hover {
   cursor: pointer;
