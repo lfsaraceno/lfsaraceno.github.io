@@ -120,7 +120,7 @@
     position: absolute;
     top: 0;
     right: 100%;
-    background: url(./img/menu.svg) #fff center no-repeat;
+    background: url(../img/menu.svg) #fff center no-repeat;
     background-size: 25px;
     font-size: 0;
     width: 40px;
@@ -130,7 +130,7 @@
   }
   .navigation-store .menu.-close {
     right: 0;
-    background-image: url(./img/close.svg);
+    background-image: url(../img/close.svg);
   }
 
   .navigation-menu-store {
