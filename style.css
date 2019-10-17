@@ -13,7 +13,23 @@
   color: #ebebebef;
   background: linear-gradient(to top, rgba(50, 50, 50), #e24545);
 }
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 10px rgba(50, 50, 50, 0.2);
+  margin-bottom: 20px;
+  position: absolute;
+  top: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
 a {
   text-decoration: none;
+  margin-bottom: 10px;
   color: rgba(255, 255, 255, 0.74);
 }
