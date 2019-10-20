@@ -1,3 +1,5 @@
+let qtdCardDisable = 0;
+
 function createCardWrapper() {
   const $wrapperCards = document.createElement("section");
   $wrapperCards.classList.add("wrapper-cards");
@@ -19,10 +21,9 @@ function createCardWrapper() {
   }
   `;
   $head.insertBefore($style, null);
-  $wrapperCards.addEventListener("click", event => {
-    const $origin = event.target;
-    console.log("Origin", $origin);
-    console.log("Parente:", $origin.parentNode);
+  $wrapperCards.addEventListener("click", () => {
+    qtdCardDisable = $wrapperCards.querySelectorAll(".cardBack.-disable")
+      .length;
   });
 
   return $wrapperCards;
