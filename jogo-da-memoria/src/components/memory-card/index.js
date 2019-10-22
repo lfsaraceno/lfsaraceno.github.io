@@ -65,7 +65,8 @@ const creatingMemoryCard = () => {
         position: static;
       }
 
-      .cardBack.-disable{
+      .cardBack.-disable,
+      .cardBack.-score{
         display: none;
       }
       
@@ -73,7 +74,7 @@ const creatingMemoryCard = () => {
     `;
   $head.insertBefore($style, null);
 
-  return ({ src: src, alt: alt, nameClass: nameClass }) => `
+  return ({ src: src, alt: alt, nameClass: nameClass, name: name }) => `
     <div class="cards" onClick="clickCard(this)">
       <article class="cardBack" >
         <img
@@ -87,6 +88,7 @@ const creatingMemoryCard = () => {
         <img
         src= ${src}
         alt=${alt}
+        name=${name}
         class='icon'          
         />
       </article>        
@@ -94,19 +96,40 @@ const creatingMemoryCard = () => {
   `;
 };
 
+let score = 0;
+let attempt = 0;
 function clickCard($component) {
   if (qtdCardDisable < 2) {
-    $component.children[0].classList.add("-disable");
+    $component.children[0].classList.add("-disable", "-score");
+    $component.children[1].classList.add("-active");
   }
 
   if (qtdCardDisable === 1) {
-    setTimeout(() => {
-      const $disableMemoryCard = document.querySelectorAll(".-disable");
-
+    const $disableMemoryCard = document.querySelectorAll(".-disable");
+    const $cardActive = document.querySelectorAll(".card.-active");
+    if (
+      $cardActive[0].children[0].getAttribute("src") ===
+      $cardActive[1].children[0].getAttribute("src")
+    ) {
+      score++;
+      attempt++;
+      $cardActive.forEach($activeCard => {
+        $activeCard.classList.remove("-active");
+      });
       $disableMemoryCard.forEach($memoryCard => {
         $memoryCard.classList.remove("-disable");
       });
-      qtdCardDisable = 0;
-    }, 1000);
+    } else {
+      setTimeout(() => {
+        $disableMemoryCard.forEach($memoryCard => {
+          $memoryCard.classList.remove("-disable", "-score");
+        });
+        $cardActive.forEach($activeCard => {
+          $activeCard.classList.remove("-active");
+        });
+        qtdCardDisable = 0;
+      }, 1000);
+      attempt++;
+    }
   }
 }
