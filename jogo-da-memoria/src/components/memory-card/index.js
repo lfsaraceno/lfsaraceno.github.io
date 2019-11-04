@@ -123,8 +123,8 @@ const memoryCard = (function() {
     ) {
       store.score++;
       store.attempt++;
-      document.querySelector(".-point").textContent = store.score;
-      document.querySelector(".-attempt").textContent = store.attempt;
+      document.querySelector(".numbers.-point").textContent = store.score;
+      document.querySelector(".numbers.-attempt").textContent = store.attempt;
       $cardActive.forEach($activeCard => {
         $activeCard.classList.remove("-active");
       });
@@ -143,7 +143,7 @@ const memoryCard = (function() {
         store.qtdCardDisable = 0;
       }, 1000);
       store.attempt++;
-      document.querySelector(".-attempt").textContent = store.attempt;
+      document.querySelector(".numbers.-attempt").textContent = store.attempt;
     }
   };
   return {
