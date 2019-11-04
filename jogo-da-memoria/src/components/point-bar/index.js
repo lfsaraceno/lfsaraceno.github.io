@@ -9,10 +9,9 @@ const pointBar = (function() {
           width: 93%;
           height: 60px;
           font-family: 'Comfortaa', sans-serif;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
           border-radius: 20px;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
           position: relative;
           margin: 5px;
           color: #fff;
@@ -37,6 +36,9 @@ const pointBar = (function() {
           font-weight: bold;
   
         }
+        .point-button {
+          position: relative;
+        }
   
     `;
 
@@ -44,14 +46,16 @@ const pointBar = (function() {
   };
 
   module.create = () => {
+    const $button = gameButton.render();
     module._style();
     return `
       <header class="pointBar">
-        <div class="count">
+        <div class="count -score">
           <h3 class="lable">Pontos</h3>
           <span class="numbers -point">0</span>
         </div>
-        <div class="count" >
+        <div class="point-button">${$button}</div>
+        <div class="count -attempt" >
           <h3 class="lable">Jogadas</h3>
           <span class="numbers -attempt">0</span>
         </div>

@@ -1,9 +1,9 @@
 (function() {
   const $root = document.querySelector("#root");
-
-  const creatingCard = memoryCard.creatingMemoryCard();
-  const $wrapperCard = createCardWrapper();
   const $pointBar = pointBar.create();
+  // const $gameButton = gameButton.render();
+  const $wrapperCard = createCardWrapper();
+  const creatingCard = memoryCard.creatingMemoryCard();
 
   const $memoryCardBug = creatingCard({
     src: "img/icon-bug.svg",
@@ -31,8 +31,8 @@
     alt: "IconeCabeça",
     nameClass: "card"
   });
-
   $wrapperCard.insertAdjacentHTML("afterbegin", $pointBar);
+  // $wrapperCard.insertAdjacentHTML("afterbegin", $gameButton);
 
   $wrapperCard.insertAdjacentHTML("beforeend", $memoryCardBug);
   $wrapperCard.insertAdjacentHTML("beforeend", $memoryCardJava);

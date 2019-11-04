@@ -1,5 +1,6 @@
 const memoryCard = (function() {
-  const creatingMemoryCard = () => {
+  const module = {};
+  module.creatingMemoryCard = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
     $style.textContent = `
@@ -95,25 +96,25 @@ const memoryCard = (function() {
           `;
   };
 
-  const clickCard = $component => {
-    activeMemoryCard($component);
-    verifyActiveCard();
+  module.clickCard = $component => {
+    module._activeMemoryCard($component);
+    module._verifyActiveCard();
   };
 
-  const activeMemoryCard = $component => {
+  module._activeMemoryCard = $component => {
     if (store.qtdCardDisable < 2) {
       $component.children[0].classList.add("-disable", "-score");
       $component.children[1].classList.add("-active");
     }
   };
 
-  const verifyActiveCard = () => {
+  module._verifyActiveCard = () => {
     if (store.qtdCardDisable === 1) {
-      compareCards();
+      module._compareCards();
     }
   };
 
-  const compareCards = () => {
+  module._compareCards = () => {
     const $disableMemoryCard = document.querySelectorAll(".-disable");
     const $cardActive = document.querySelectorAll(".card.-active");
     if (
@@ -146,7 +147,7 @@ const memoryCard = (function() {
     }
   };
   return {
-    creatingMemoryCard,
-    clickCard
+    creatingMemoryCard: module.creatingMemoryCard,
+    clickCard: module.clickCard
   };
 })();
