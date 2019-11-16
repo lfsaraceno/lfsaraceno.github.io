@@ -1,19 +1,17 @@
 const pointBar = (function() {
   const module = {};
-  module._style = function() {
+  module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
     $style.textContent = `
         .pointBar {
           display: flex;        
-          width: 93%;
-          height: 60px;
+          width: 100%;
+          height: 50px;
           font-family: 'Comfortaa', sans-serif;
           justify-content: space-between;
           align-items: center;
-          border-radius: 20px;
           position: relative;
-          margin: 5px;
           color: #fff;
           background-color: #3a4042;
   
@@ -29,24 +27,30 @@ const pointBar = (function() {
         }
         .lable {
           margin-bottom: 5px;
-          font-size: 1.2em;
+          font-size: 1em;
           font-weight: lighter;
         }
         .numbers {
           font-weight: bold;
   
         }
-        .point-button {
+
+        .layer-button {
+          width: 65px;
+          height: 65px;
+          display: block;
           position: relative;
+          background-color: #d4d4d4;
+          border-radius: 50%;
+          
         }
-  
     `;
 
     $head.insertBefore($style, null);
   };
 
   module.create = () => {
-    const $button = gameButton.render();
+    const $resetButton = resetButton.render();
     module._style();
     return `
       <header class="pointBar">
@@ -54,15 +58,16 @@ const pointBar = (function() {
           <h3 class="lable">Pontos</h3>
           <span class="numbers -point">0</span>
         </div>
-        <div class="point-button">${$button}</div>
-        <div class="count -attempt" >
+        <div class="layer-button">          
+          ${$resetButton}        
+        </div>
+        <div class="count -attempt">
           <h3 class="lable">Jogadas</h3>
           <span class="numbers -attempt">0</span>
         </div>
       </hearder>
     `;
   };
-
   return {
     create: module.create
   };

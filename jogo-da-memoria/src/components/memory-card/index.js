@@ -6,14 +6,14 @@ const memoryCard = (function() {
     $style.textContent = `
         .cards{
           display: flex;        
-          width: 155px;
-          height: 155px;
+          width: 45%;
+          height: 17.5%;
           justify-content: center;
           align-items: center;
           border-radius: 30px;
-          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.16);
           position: relative;
-          margin: 5px;        
+          margin: 2px;        
         }
         .card {
           width: 100%;
@@ -32,9 +32,6 @@ const memoryCard = (function() {
           content: "";
           width: 90px;
           height: 90px;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
           border-radius: 50%;
           background-color: #d4d4d4;
           position: absolute;

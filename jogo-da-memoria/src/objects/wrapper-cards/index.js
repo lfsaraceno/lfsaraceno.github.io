@@ -10,12 +10,13 @@ function createCardWrapper() {
     display: flex;
     flex-wrap: wrap;
     width: 350px;
-    height: auto;
+    height: 100vh;
     border-radius: 30px;
     background-color: #d4d4d4;
     justify-content: space-around;
     align-items: center;
-    margin: 10px auto;
+    margin: auto;
+    overflow: hidden;
   }
   `;
   $head.insertBefore($style, null);
