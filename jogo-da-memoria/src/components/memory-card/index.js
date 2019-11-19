@@ -30,16 +30,16 @@ const memoryCard = (function() {
         
         .card::before {
           content: "";
-          width: 90px;
-          height: 90px;
+          width: 60%;
+          height: 60%;
           border-radius: 50%;
           background-color: #d4d4d4;
           position: absolute;
         }
   
         .card .icon {
-          width: 90px;
-          height: 90px;
+          width: 60%;
+          height: 60%;
           position: relative;
           top: -9px;
         }
@@ -57,8 +57,8 @@ const memoryCard = (function() {
         
         
         .cardBack > .icon {
-          width: 90px;
-          height: 90px;
+          width: 60%;
+          height: 60%;
           position: static;
         }
   

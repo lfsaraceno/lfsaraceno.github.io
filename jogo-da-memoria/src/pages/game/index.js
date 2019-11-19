@@ -3,7 +3,7 @@
   const $pointBar = pointBar.create();
   const $wrapperCard = createCardWrapper();
   const $creatingCard = memoryCard.creatingMemoryCard();
-  const $shield = shield.create();
+  const $shield = layerShield.create();
 
   const $memoryCardBug = $creatingCard({
     src: "img/icon-bug.svg",

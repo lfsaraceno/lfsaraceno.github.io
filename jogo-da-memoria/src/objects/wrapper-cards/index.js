@@ -7,10 +7,11 @@ function createCardWrapper() {
   const $style = document.createElement("style");
   $style.textContent = `
   .wrapper-cards {
-    display: flex;
-    flex-wrap: wrap;
     width: 350px;
     height: 100vh;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
     border-radius: 30px;
     background-color: #d4d4d4;
     justify-content: space-around;

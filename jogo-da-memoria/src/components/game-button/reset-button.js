@@ -1,17 +1,15 @@
 const resetButton = (function() {
-  module = {};
+  const module = {};
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
     $style.textContent = `
     .resetbutton {
-      width: 70px;
-      height: 70px;
-      display: block;
+      width: 50px;
+      height: 50px;
+      display: contents;
       position: relative;
       border-radius: 50%;
-      background-color: #fff
-
     }
     `;
     $head.insertBefore($style, null);

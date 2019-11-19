@@ -1,16 +1,27 @@
 const startButton = (function() {
-  module = {};
+  const module = {};
   module._style = () => {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
     $style.textContent = `
-    .startbutton {
-      width: 50%;
-      height: 50%;
+    .start-button {
+      width: 100px;
+      height: 100px;
       display: block;
-      position: relative;
+      position: relative;        
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .start-button > .button {
+      width: 90px;
+      height: 90px;
+      border: 4px solid #fffcee;
       border-radius: 50%;
-    }   
+      font-size: 1.5em;
+      box-shadow: 0 0px 6px 5px rgba(0, 0, 0, 0.5);
+    }
     `;
     $head.insertBefore($style, null);
   };
@@ -18,18 +29,18 @@ const startButton = (function() {
     const $buttonStart = gameButton.render("start");
     module._style();
     return `
-      <div class="startbutton" onClick=startButton.start(this)>${$buttonStart}</div>
+      <div class="start-button" onClick="startButton.handleClick(this)">
+      ${$buttonStart}
+      </div>
   `;
   };
 
-  module.start = $component => {
+  module.handleClick = () => {
     const $button = document.querySelector(".shield");
-    $button.classList.remove("-active");
-    $component.remove();
+    $button.classList.add("-disable");
   };
-
   return {
     render: module.render,
-    start: module.start
+    handleClick: module.handleClick
   };
 })();
