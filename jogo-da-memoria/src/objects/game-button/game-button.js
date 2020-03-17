@@ -4,35 +4,33 @@ const gameButton = (function() {
     const $head = document.querySelector("head");
     const $style = document.createElement("style");
     $style.textContent = `
-    .button {
+    .button${store.buttonId} {
       width: 50px;
       height: 50px;
-      display: inline-block;
-      position: absolute;
-      font-family: "comfortaa", sans-serif;
       font-weight: bold;
       color: #f25a70;
-      text-shadow: 0 0 2px black;
-      background-image: linear-gradient(#828282, #3a4042);
-      border: 2px solid #fffcee;
+      border: 2px solid #f25a70;
       box-sizing: content-box;
       border-radius: 50%;
       letter-spacing: 2px;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      text-transform: uppercase;
       cursor: pointer;
+      
+    }
+
+    .button${store.buttonId}:focus {
+      outline: 0;
     }
     `;
 
     $head.insertBefore($style, null);
   };
-
-  module.render = $component => {
+  module.render = ({ component = "Enviar", type = "", onClick = "" }) => {
+    store.buttonId--;
     module._style();
     return `
-      <button class="button">${$component}</button>
-    `;
+        <button class="button${store.buttonId}" onClick="${onClick}" type="${type}" >${component}</button>
+      `;
   };
 
   return {

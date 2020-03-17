@@ -1,4 +1,4 @@
-(function() {
+const game = function() {
   const $root = document.querySelector("#root");
   const $pointBar = pointBar.create();
   const $wrapperCard = createCardWrapper();
@@ -47,4 +47,4 @@
 
   $wrapperCard.insertAdjacentHTML("beforeend", $shield);
   $root.insertAdjacentElement("beforeend", $wrapperCard);
-})();
+};
